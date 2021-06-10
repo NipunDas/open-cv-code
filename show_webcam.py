@@ -6,7 +6,7 @@ def changeRes(width, height):
 	capture.set(3, width)
 	capture.set(4, height)
 
-changeRes(1200, 800)
+#changeRes(1200, 800)
 
 while True:
 	isTrue, frame = capture.read()
