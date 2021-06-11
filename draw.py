@@ -2,7 +2,7 @@ import cv2 as cv
 import numpy as np
 
 #creating blank image
-blank = np.zeros((500, 500, 3), dtype='uint8')
+blank = np.zeros((700, 500, 3), dtype='uint8')
 #cv.imshow('Blank Image', blank)
 
 #making all pixels green
@@ -36,7 +36,7 @@ cv.line(blank2, (blank2.shape[1]//2, blank2.shape[0]//2), (500,500), (0,255,255)
 #cv.imshow('Diagonal Line', blank2)
 
 #adding text
-cv.putText(blank2, 'Hello World', (50,50), cv.FONT_HERSHEY_TRIPLEX, 1.0, (255,0,0), 2)
+cv.putText(blank2, 'Hello World', (50,50), cv.FONT_HERSHEY_TRIPLEX, 1.0, (255,0,0), thickness=2)
 cv.imshow('Drawing Test', blank2)
 
 #can draw on cat image as well, but looks nicer to draw on blank image
