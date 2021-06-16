@@ -4,11 +4,12 @@ import numpy as np
 capture = cv.VideoCapture(0)
 
 def analyzeFrame(frame):
-	gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
-	blur = cv.GaussianBlur(gray, (9,9), cv.BORDER_DEFAULT)
+	#gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
+	blur = cv.GaussianBlur(frame, (9,9), cv.BORDER_DEFAULT)
 	canny = cv.Canny(blur, 100, 200)
 	dilated = cv.dilate(canny, (7,7), iterations=3)
 	#eroded = cv.erode(canny, (3,3), iterations=1)
+	#thresh = cv.adaptiveThreshold(gray, 255, cv.ADAPTIVE_THRESH_GAUSSIAN_C, cv.THRESH_BINARY, 13, 9)
 	contours, hierarchies = cv.findContours(dilated, cv.RETR_EXTERNAL, cv.CHAIN_APPROX_SIMPLE)
 	blank = np.zeros(frame.shape, dtype='uint8')
 
